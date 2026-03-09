@@ -7,7 +7,7 @@ set(CMAKE_C_STANDARD 99)
 add_executable(NetSpeedCtrl WIN32
     src/main.c
     src/network.c
-    src/utils.c
+    src/resource.rc
 )
 
 # Target Include Directories
@@ -19,7 +19,7 @@ target_include_directories(NetSpeedCtrl PRIVATE
 # Libraries
 # Assuming 64-bit build
 target_link_directories(NetSpeedCtrl PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/WinDivert/x64)
-target_link_libraries(NetSpeedCtrl PRIVATE WinDivert comctl32 user32 gdi32 advapi32 shlwapi)
+target_link_libraries(NetSpeedCtrl PRIVATE WinDivert comctl32 user32 gdi32 advapi32 shlwapi winmm)
 
 # Copy DLL and SYS to output dir after build
 add_custom_command(TARGET NetSpeedCtrl POST_BUILD
