@@ -7,6 +7,7 @@ set(CMAKE_C_STANDARD 99)
 add_executable(NetSpeedCtrl WIN32
     src/main.c
     src/network.c
+    src/utils.c
     src/resource.rc
 )
 

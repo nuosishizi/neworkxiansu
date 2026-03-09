@@ -24,7 +24,7 @@ jobs:
 
     - name: Create ZIP package
       run: |
-        Compress-Archive -Path src, include, WinDivert, CMakeLists.txt, build_gcc.bat, build_msvc.bat, README.md -DestinationPath NetSpeedCtrl-${{ github.ref_name }}.zip
+        Compress-Archive -Path build/Release/*, README.md -DestinationPath NetSpeedCtrl-${{ github.ref_name }}.zip
 
     - name: Create Release
       uses: softprops/action-gh-release@v1
